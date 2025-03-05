@@ -83,6 +83,7 @@ const Manager = () => {
         console.log("Deleting password with id ", id)
         let c = confirm("Do you really want to delete this password?")
         if (c) {
+            //setting the password
             setPasswordArray(passwordArray.filter(item => item.id !== id))
 
             await fetch("http://localhost:3000/", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) })
